@@ -9,7 +9,7 @@ import argparse
 from qtools3 import constants
 
 
-def command_line_interface():
+def get_parser():
     prog_desc = ('Convert files from XLSForm to XForm and validate. '
                  'This versatile program can accept .xls or .xlsx files as '
                  'input. The output is a pretty-formatted XML file. An '
@@ -61,6 +61,11 @@ def command_line_interface():
     debug_help = 'Show debug information. Helpful for squashing bugs.'
     parser.add_argument('-d', '--debug', action='store_true', help=debug_help)
 
+    return parser
+
+
+def command_line_interface():
+    parser = get_parser()
     args = parser.parse_args()
 
     xlsxfiles = [str(filename) for filename in args.xlsxfile]

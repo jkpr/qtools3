@@ -1,0 +1,2 @@
+2020-03-23 v0.3.4
+* Pull out CLI parser into its own function
